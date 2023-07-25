@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-feature-settings: 'clig' off, 'liga' off;
+  color: $white;
+  background-color: $background-color;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+details, summary {
+  outline: none;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-moz-selection {
+  background-color: $white;
+  color: $background-color;
+}
+
+::selection {
+  background-color: $white;
+  color: $background-color;
+}
+
+/*========================
+        Common Styles
+==========================*/
+
+.container {
+    width: 100%;
+    max-width: 1330px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+  color: $white;
+  opacity: 0.1;
+  text-align: center;
+  font-size: 127px;
+  font-weight: 800;
+  line-height: 139px;
+  letter-spacing: -6.339px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  a {
+    @include flex-justify-align(center, center);
+    color: #FDDD35;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+}

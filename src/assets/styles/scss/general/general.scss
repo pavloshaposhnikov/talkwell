@@ -1,0 +1,272 @@
+.section--general {
+  .general {
+    margin: 150px auto 110px;
+
+    &__inner {
+        @include flex-justify-align(space-between, flex-start);
+        margin-top: 40px;
+    }
+
+    &__content {
+      max-width: 620px;
+      width: 100%;
+
+      .general__label {
+        @include flex-justify-align(center, center);
+        width: 147px;
+        padding: 10px 18px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        background-color: rgba(0, 0, 0, 0.12);
+        font-size: 10px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+
+      .general__title {
+        margin: 24px 0;
+        font-size: 66px;
+        line-height: 72.6px;
+        font-weight: 700;
+        letter-spacing: -3.727px;
+      }
+
+      .general__info {
+        @include flex-justify-align(start, center);
+
+        .general__btn {
+          @include flex-justify-align(center, center);
+          width: 230px;
+          padding: 18px 25px;
+          border-radius: 6px;
+          background-color: #FDDD35;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0px 12px 24px 0px rgba(0, 0, 0, 0.22);
+          color: $black;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 19.2px;
+          letter-spacing: -0.32px;
+        }
+
+        .general__info-avatars {
+          @include flex-justify-align(center, center);
+          margin-left: 16px;
+          font-size: 12px;
+          font-weight: 600;
+          color: $white;
+          line-height: 18px;
+          letter-spacing: -0.12px;
+
+          img {
+            margin-right: 8px;
+            max-width: 130px;
+            width: 100%;
+            height: 35px;
+          }
+        }
+      }
+
+      .general__desc {
+        margin-top: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $white;
+        line-height: 21px;
+        letter-spacing: -0.14px;
+      }
+    }
+    .general__img {
+      @include flex-justify-align(center, center);
+
+      img {
+        max-width: 600px;
+        width: 100%;
+        height: 393px;
+      }
+    }
+  }
+}
+
+.section--courses {
+  .courses {
+    &__inner {
+      margin-bottom: 150px;
+    }
+
+    &__items {
+      @include flex-justify-align(space-between, flex-start);
+
+      .courses__item {
+        @include flex-justify-align(flex-start, flex-start);
+        flex-direction: column;
+        max-width: 638px;
+        width: 100%;
+        height: 500px;
+        padding: 62px 53px 0 53px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        background: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(6px);
+
+        .courses__item-title {
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 52.8px;
+          letter-spacing: -2px;
+          color: $white;
+        }
+
+        .courses__item-link {
+          @include flex-justify-align(center, center);
+          margin-top: 25px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $white;
+          line-height: 21.6px;
+          letter-spacing: -0.36px;
+
+          .courses__item-arrow {
+            position: relative;
+            margin-left: 12px;
+            width: 26px;
+            height: 15px;
+          }
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+        }
+      }
+
+      .courses__item:first-child {
+        img {
+          height: 251px;
+        }
+      }
+
+      .courses__item:nth-child(2) {
+        img {
+          height: 224px;
+        }
+      }
+    }
+  }
+}
+
+.section--reviews {
+  .reviews {
+
+    &__inner {
+      margin-bottom: 120px;
+
+      .reviews__items {
+        @include flex-justify-align(space-between, flex-start);
+        flex-wrap: wrap;
+
+        .reviews__item {
+          @include flex-justify-align(flex-start, flex-start);
+          flex-direction: column;
+          height: 280px;
+          max-width: 417px;
+          width: 100%;
+          padding: 26px 23px;
+          margin-bottom: 24px;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.50);
+          background: rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(6px);
+
+          .reviews__item-header {
+            @include flex-justify-align(space-between, center);
+            width: 100%;
+
+            .reviews__item-profile {
+              @include flex-justify-align(center, center);
+
+              img {
+                max-width: 46px;
+                width: 100%;
+                height: 46px;
+              }
+
+              .reviews__item-info {
+                margin-left: 6px;
+
+                .reviews__item-name {
+                  font-size: 14px;
+                  font-weight: 600;
+                  letter-spacing: -0.28px;
+                  color: $white;
+                }
+
+                .reviews__item-link {
+                  color: $white;
+                  opacity: 0.6;
+                  font-size: 12px;
+                  font-weight: 400;
+                  letter-spacing: -0.36px;
+                }
+              }
+            }
+          }
+
+          .reviews__item-text {
+            padding: 24px 0;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            letter-spacing: -0.18px;
+            color: $white;
+          }
+
+          .reviews__item-date {
+            @include flex-justify(center);
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 50px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+  background-color: #4C34A4;
+  height: 225px;
+
+  &__inner {
+    @include flex-justify-align(center, center);
+    flex-direction: column;
+    text-align: center;
+
+    .footer__copyright {
+      margin-top: 15px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: -0.12px;
+      color: $white;
+      opacity: 0.7;
+    }
+
+    .socials {
+      margin-top: 15px;
+      @include flex-justify-align(center, center);
+
+      &__item {
+        margin-right: 12px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
