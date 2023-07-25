@@ -57,6 +57,10 @@ details, summary {
         Common Styles
 ==========================*/
 
+.main {
+  flex: 1 0 auto;
+}
+
 .container {
     width: 100%;
     max-width: 1330px;
