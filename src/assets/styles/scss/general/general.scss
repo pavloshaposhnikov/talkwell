@@ -8,7 +8,7 @@
     right: 0;
     width: 1351px;
     height: 1511px;
-    background-image: url('../../images/about/background-gradient.png');
+    background-image: url('../../images/general/background-gradient.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,12 +25,12 @@
     }
 
     &__content {
-      max-width: 620px;
+      max-width: 636px;
       width: 100%;
 
       .general__label {
         @include flex-justify-align(center, center);
-        width: 147px;
+        width: 150px;
         padding: 10px 18px;
         border-radius: 40px;
         border: 1px solid rgba(255, 255, 255, 0.50);
@@ -43,11 +43,17 @@
       }
 
       .general__title {
-        margin: 24px 0;
+        margin-top: 24px;
         font-size: 66px;
         line-height: 72.6px;
         font-weight: 700;
         letter-spacing: -3.727px;
+      }
+
+      .general__subtitle {
+        font-weight: 500;
+        font-size: 13px;
+        margin-bottom: 34px;
       }
 
       .general__info {
@@ -93,9 +99,17 @@
         line-height: 21px;
         letter-spacing: -0.14px;
       }
+
+      .general__desc:last-child {
+        margin-top: 12px;
+      }
     }
     .general__img {
       @include flex-justify-align(center, center);
+
+      @include media-tablet {
+        display: none;
+      }
 
       img {
         max-width: 600px;
@@ -117,6 +131,15 @@
 
     &__items {
       @include flex-justify-align(space-between, flex-start);
+      flex-wrap: wrap;
+
+      @include media-tablet {
+        flex-wrap: nowrap;
+      }
+
+      @include media-laptop {
+        justify-content: space-around;
+      }
 
       .courses__item {
         @include flex-justify-align(flex-start, flex-start);
@@ -131,12 +154,24 @@
         box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(6px);
 
+        @include media-laptop {
+          padding: 30px 20px 0 20px;
+        }
+
+        @include media-tablet {
+          max-width: inherit;
+        }
+
         .courses__item-title {
           font-size: 48px;
           font-weight: 700;
           line-height: 52.8px;
           letter-spacing: -2px;
           color: $white;
+
+          @include media-laptop {
+            font-size: 41px;
+          }
         }
 
         .courses__item-link {
@@ -189,7 +224,7 @@
     right: 0;
     width: 1351px;
     height: 550px;
-    background-image: url('../../images/about/background-gradient3.png');
+    background-image: url('../../images/general/background-gradient3.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -205,6 +240,14 @@
         @include flex-justify-align(space-between, flex-start);
         flex-wrap: wrap;
 
+        @include media-tablet {
+          flex-wrap: nowrap;
+        }
+
+        @include media-laptop {
+          justify-content: space-around;
+        }
+
         .reviews__item {
           @include flex-justify-align(flex-start, flex-start);
           flex-direction: column;
@@ -219,12 +262,19 @@
           box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.25);
           backdrop-filter: blur(6px);
 
+          @include media-tablet {
+            max-width: inherit;
+            margin-bottom: 0;
+          }
+
           .reviews__item-header {
             @include flex-justify-align(space-between, center);
             width: 100%;
 
             .reviews__item-profile {
-              @include flex-justify-align(center, center);
+              @include flex-justify-align(start, center);
+              max-width: 300px;
+              width: 100%;
 
               img {
                 max-width: 46px;
@@ -250,6 +300,12 @@
                   letter-spacing: -0.36px;
                 }
               }
+            }
+
+            .reviews__item-socials {
+              max-width: 23px;
+              width: 100%;
+              height: 20px;
             }
           }
 
@@ -299,6 +355,14 @@
 
       &__item {
         margin-right: 12px;
+
+        .socials__link {
+          img {
+            max-width: 23px;
+            width: 100%;
+            height: 23px;
+          }
+        }
 
         &:last-child {
           margin-right: 0;

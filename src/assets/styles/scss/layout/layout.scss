@@ -76,6 +76,10 @@ details, summary {
   font-weight: 800;
   line-height: 139px;
   letter-spacing: -6.339px;
+
+  @include media-tablet {
+    font-size: 104px;
+  }
 }
 
 .logo {
@@ -91,4 +95,24 @@ details, summary {
       margin-right: 10px;
     }
   }
+}
+
+.slick-arrow {
+  margin: auto;
+  background-color: transparent;
+  width: 13px;
+  height: 28px;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.slick-prev {
+  padding-right: 25px;
+}
+
+.slick-next {
+  padding-left: 12px;
 }
