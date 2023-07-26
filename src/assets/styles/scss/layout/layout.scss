@@ -53,9 +53,18 @@ details, summary {
   color: $background-color;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+
 /*========================
         Common Styles
 ==========================*/
+
+.main {
+  flex: 1 0 auto;
+}
 
 .container {
     width: 100%;
@@ -72,9 +81,22 @@ details, summary {
   font-weight: 800;
   line-height: 139px;
   letter-spacing: -6.339px;
+
+  @include media-tablet {
+    font-size: 97px;
+  }
+
+  @include media-mobile {
+    margin-bottom: 15px;
+    font-size: 66px;
+    line-height: 59px;
+    letter-spacing: -2.339px;
+  }
 }
 
 .logo {
+  position: relative;
+  z-index: 11;
   font-size: 22px;
   font-weight: 900;
   text-transform: uppercase;
@@ -88,3 +110,32 @@ details, summary {
     }
   }
 }
+
+.slick-arrow {
+  margin: auto;
+  background-color: transparent;
+  width: 13px;
+  height: 28px;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.slick-prev {
+  margin-right: 25px;
+}
+
+.slick-next {
+  margin-left: 25px;
+}
+
+.btn {
+  transition: all 0.5s ease;
+
+  &:hover {
+    transition: all 0.5s ease;
+  }
+}
+

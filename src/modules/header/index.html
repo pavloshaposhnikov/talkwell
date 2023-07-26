@@ -9,54 +9,58 @@
         <nav class="nav main">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="index.html" class="nav__link">Courses</a>
+                    <a href="#" class="nav__link">Курси</a>
                 </li>
                 <li class="nav__item">
-                    <a href="jungles.html" class="nav__link">Pricing</a>
+                    <a href="#" class="nav__link">Ціни</a>
                 </li>
                 <li class="nav__item">
-                    <a href="about.html" class="nav__link">Log in</a>
+                    <a href="#" class="nav__link">Контакт</a>
                 </li>
                 <li class="nav__item">
-                    <a href="about.html" class="nav__link">Sign up</a>
+                    <a href="#" class="nav__link">Зареєструватися</a>
                 </li>
             </ul>
         </nav>
+        <div class="mobile__nav-wrapper">
+            <button id="burger" class="open__mobile">
+                <span class="burger"></span>
+                <span class="burger-text">Меню</span>
+            </button>
+            <nav class="mobile-nav" id="mobile-nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Курси</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Ціни</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Контакт</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Зареєструватися</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.mobile-nav -->
+        </div> <!-- /.mobile__nav-wrapper -->
     </div>
 </div>
 
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        $("#menu-btn").click(function() {-->
-<!--            if (!$("#menu-btn").data('status')) {-->
-<!--                $("#menu-btn").html('close');-->
-<!--                $("#menu-btn").data('status', true);-->
-<!--            }-->
-<!--            else {-->
-<!--                $("#menu-btn").html('menu');-->
-<!--                $("#menu-btn").data('status', false);-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+<script>
+    document.querySelector('.open__mobile').addEventListener('click', function () {
+        document.querySelector('.open__mobile').classList.toggle('is-open');
+        document.querySelector('.mobile-nav').classList.toggle('is-open');
+        document.querySelector('body').classList.toggle('no-scroll');
+    });
 
-<!--<script>-->
-<!--    $('.menu-btn, .nav__link').on('click', function(event){-->
-<!--        $('.menu-btn').toggleClass('is-active');-->
-<!--        $('.cursor').toggleClass('is-active');-->
-<!--        $('.header__info').toggleClass('is-active');-->
-<!--        $('.nav').toggleClass('is-active&#45;&#45;nav');-->
+    document.querySelectorAll('.nav__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.querySelector('.open__mobile').classList.remove('is-open');
+            document.querySelector('.mobile-nav').classList.remove('is-open');
+            document.querySelector('body').classList.remove('no-scroll');
+        });
+    });
 
-<!--        if ($('.menu-btn').hasClass('is-active')) {-->
-<!--            $('#body').addClass('no-scroll');-->
-<!--            $(".nav__link").removeClass("is-active");-->
-<!--            $('.nav').removeClass("is-active");-->
-<!--        } else {-->
-<!--            $('#body').removeClass('no-scroll');-->
-<!--            $('.nav').removeClass('is-active');-->
-<!--            $('.menu-btn').removeClass('is-active');-->
-<!--            $('.header__info').removeClass('is-active');-->
-<!--            $('.cursor').removeClass('is-active');-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
+</script>

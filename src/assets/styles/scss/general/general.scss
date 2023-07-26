@@ -1,6 +1,23 @@
 .section--general {
+
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1351px;
+    height: 1511px;
+    background-image: url('../../images/general/background-gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
   .general {
-    margin: 150px auto 110px;
+    padding-top: 150px;
+    padding-bottom: 110px;
 
     &__inner {
         @include flex-justify-align(space-between, flex-start);
@@ -8,12 +25,12 @@
     }
 
     &__content {
-      max-width: 620px;
+      max-width: 636px;
       width: 100%;
 
       .general__label {
         @include flex-justify-align(center, center);
-        width: 147px;
+        width: 150px;
         padding: 10px 18px;
         border-radius: 40px;
         border: 1px solid rgba(255, 255, 255, 0.50);
@@ -26,11 +43,28 @@
       }
 
       .general__title {
-        margin: 24px 0;
+        margin-top: 24px;
         font-size: 66px;
         line-height: 72.6px;
         font-weight: 700;
         letter-spacing: -3.727px;
+
+        @include media-mobile {
+          font-size: 34px;
+          line-height: 40.6px;
+          letter-spacing: -0.727px;
+        }
+      }
+
+      .general__subtitle {
+        font-weight: 500;
+        font-size: 13px;
+        margin-bottom: 34px;
+
+        @include media-mobile {
+          font-size: 11px;
+          margin-bottom: 20px;
+        }
       }
 
       .general__info {
@@ -48,6 +82,17 @@
           font-weight: 600;
           line-height: 19.2px;
           letter-spacing: -0.32px;
+
+          @include media-mobile {
+            font-size: 13px;
+            padding: 15px 10px;
+            width: 185px;
+            box-shadow: 0px 0px 40px 15px rgba(253, 221, 53, 0.2);
+          }
+
+          &:hover {
+            box-shadow: 0px 0px 40px 15px rgba(253, 221, 53, 0.2);
+          }
         }
 
         .general__info-avatars {
@@ -59,11 +104,22 @@
           line-height: 18px;
           letter-spacing: -0.12px;
 
+          @include media-mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 11px;
+          }
+
           img {
             margin-right: 8px;
             max-width: 130px;
             width: 100%;
             height: 35px;
+
+            @include media-mobile {
+              margin-right: 0;
+              margin-bottom: 5px;
+            }
           }
         }
       }
@@ -75,21 +131,41 @@
         color: $white;
         line-height: 21px;
         letter-spacing: -0.14px;
+
+        @include media-mobile {
+          font-size: 13px;
+          line-height: 15px;
+        }
+      }
+
+      .general__desc:last-child {
+        margin-top: 12px;
+
+        @include media-mobile {
+          margin-top: 8px;
+        }
       }
     }
     .general__img {
       @include flex-justify-align(center, center);
 
+      @include media-tablet {
+        display: none;
+      }
+
       img {
         max-width: 600px;
         width: 100%;
-        height: 393px;
+        height: 600px;
       }
     }
   }
 }
 
 .section--courses {
+  position: relative;
+  z-index: 11;
+
   .courses {
     &__inner {
       margin-bottom: 150px;
@@ -97,6 +173,15 @@
 
     &__items {
       @include flex-justify-align(space-between, flex-start);
+      flex-wrap: wrap;
+
+      @include media-tablet {
+        flex-wrap: nowrap;
+      }
+
+      @include media-laptop {
+        justify-content: space-around;
+      }
 
       .courses__item {
         @include flex-justify-align(flex-start, flex-start);
@@ -111,12 +196,35 @@
         box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(6px);
 
+        @include media-laptop {
+          padding: 30px 20px 0 20px;
+        }
+
+        @include media-tablet {
+          max-width: inherit;
+          box-shadow: none;
+        }
+
+        @include media-mobile {
+          height: 350px;
+        }
+
         .courses__item-title {
           font-size: 48px;
           font-weight: 700;
           line-height: 52.8px;
           letter-spacing: -2px;
           color: $white;
+
+          @include media-laptop {
+            font-size: 41px;
+          }
+
+          @include media-mobile {
+            font-size: 29px;
+            line-height: 35.8px;
+            letter-spacing: -1px;
+          }
         }
 
         .courses__item-link {
@@ -127,6 +235,12 @@
           color: $white;
           line-height: 21.6px;
           letter-spacing: -0.36px;
+
+          @include media-mobile {
+            margin-top: 15px;
+            font-size: 14px;
+          }
+
 
           .courses__item-arrow {
             position: relative;
@@ -141,18 +255,30 @@
           width: 100%;
           left: 0;
           bottom: 0;
+
+          @include media-mobile {
+            height: 120px;
+          }
         }
       }
 
       .courses__item:first-child {
         img {
           height: 251px;
+
+          @include media-mobile {
+            height: 120px;
+          }
         }
       }
 
       .courses__item:nth-child(2) {
         img {
           height: 224px;
+
+          @include media-mobile {
+            height: 120px;
+          }
         }
       }
     }
@@ -160,6 +286,22 @@
 }
 
 .section--reviews {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 1351px;
+    height: 550px;
+    background-image: url('../../images/general/background-gradient3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
   .reviews {
 
     &__inner {
@@ -168,6 +310,14 @@
       .reviews__items {
         @include flex-justify-align(space-between, flex-start);
         flex-wrap: wrap;
+
+        @include media-tablet {
+          flex-wrap: nowrap;
+        }
+
+        @include media-laptop {
+          justify-content: space-around;
+        }
 
         .reviews__item {
           @include flex-justify-align(flex-start, flex-start);
@@ -183,17 +333,29 @@
           box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.25);
           backdrop-filter: blur(6px);
 
+          @include media-tablet {
+            max-width: inherit;
+            margin-bottom: 0;
+            box-shadow: none;
+          }
+
           .reviews__item-header {
             @include flex-justify-align(space-between, center);
             width: 100%;
 
             .reviews__item-profile {
-              @include flex-justify-align(center, center);
+              @include flex-justify-align(start, center);
+              max-width: 300px;
+              width: 100%;
 
               img {
                 max-width: 46px;
                 width: 100%;
                 height: 46px;
+
+                @include media-mobile {
+                  margin-right: 3px;
+                }
               }
 
               .reviews__item-info {
@@ -204,6 +366,10 @@
                   font-weight: 600;
                   letter-spacing: -0.28px;
                   color: $white;
+
+                  @include media-mobile {
+                    font-size: 13px;
+                  }
                 }
 
                 .reviews__item-link {
@@ -212,7 +378,28 @@
                   font-size: 12px;
                   font-weight: 400;
                   letter-spacing: -0.36px;
+
+                  @include media-mobile {
+                    font-size: 11px;
+                    letter-spacing: -0.1px;
+                  }
                 }
+              }
+            }
+
+            .reviews__item-socials {
+              max-width: 23px;
+              width: 100%;
+              height: 20px;
+              transition: all 0.5s ease;
+              opacity: 0.6;
+
+              @include media-tablet {
+                opacity: 1;
+              }
+
+              &:hover {
+                opacity: 1;
               }
             }
           }
@@ -224,47 +411,20 @@
             line-height: 27px;
             letter-spacing: -0.18px;
             color: $white;
+
+            @include media-mobile {
+              font-size: 14px;
+              line-height: 20px;
+            }
           }
 
           .reviews__item-date {
             @include flex-justify(center);
+
+            @include media-mobile {
+              font-size: 12px;
+            }
           }
-        }
-      }
-    }
-  }
-}
-
-.footer {
-  padding: 50px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.50);
-  background-color: #4C34A4;
-  height: 225px;
-
-  &__inner {
-    @include flex-justify-align(center, center);
-    flex-direction: column;
-    text-align: center;
-
-    .footer__copyright {
-      margin-top: 15px;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 18px;
-      letter-spacing: -0.12px;
-      color: $white;
-      opacity: 0.7;
-    }
-
-    .socials {
-      margin-top: 15px;
-      @include flex-justify-align(center, center);
-
-      &__item {
-        margin-right: 12px;
-
-        &:last-child {
-          margin-right: 0;
         }
       }
     }

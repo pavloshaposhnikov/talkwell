@@ -28,6 +28,11 @@
 
 /* Breakpoint mixins */
 
+@mixin media-laptop {
+  @media (max-width: $laptop-breakpoint) {
+    @content;
+  }
+}
 
 @mixin media-tablet {
   @media (max-width: $tablet-breakpoint) {
