@@ -116,3 +116,11 @@ details, summary {
 .slick-next {
   padding-left: 12px;
 }
+
+.btn {
+  transition: all 0.5s ease;
+
+  &:hover {
+    transition: all 0.5s ease;
+  }
+}
